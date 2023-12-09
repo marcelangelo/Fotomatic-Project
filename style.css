@@ -253,7 +253,7 @@ header .mobile {
   justify-content: flex-start;
   align-items: flex-start;
   height: 100%;
-  background-image: url(https://raw.githubusercontent.com/marcelangelo/Fotomatic-Project/main/resources/images/banner-landingpage.jpg);
+  background-image: url('https://raw.githubusercontent.com/marcelangelo/Fotomatic-Project/main/resources/images/banner-landingpage.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
