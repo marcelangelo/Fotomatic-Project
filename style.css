@@ -195,7 +195,7 @@ header .mobile {
     border-bottom: solid 1px #c6c1c1;
     background-color: white;
     height: 3rem;
-    padding: 0;
+    padding: 0.2rem 0rem;
   }
 
   header .content {
