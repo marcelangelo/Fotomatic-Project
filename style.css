@@ -14,8 +14,7 @@ html {
 
 .main-content {
   position: relative;
-  top: 9.3rem; /* To offset for fixed header. */
-  margin: -8px;
+  top: 9.1rem; /* To offset for fixed header. */
 }
 
 .center {
@@ -23,12 +22,12 @@ html {
   margin: 0;
 }
 
-.image-container {
+#features-section{
   overflow: hidden;
 }
 
-.image-container img {
-  display: block;
+.image-container {
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 760px) {
@@ -54,7 +53,7 @@ header {
 
 header .content {
   display: flex;
-  width: 95%;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   height: 100%;
@@ -65,6 +64,10 @@ header .content .logo {
   font-size: 3rem;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+header .content nav.desktop{
+  padding-right: 5rem;
 }
 
 header .content nav.desktop ul {
@@ -93,7 +96,8 @@ header .mobile {
   display: none;
 }
 
-.joinBtn{
+#joinBtn {
+  padding: 0;
   display: none;
 }
 
@@ -102,10 +106,11 @@ header .mobile {
 @media only screen and (max-width: 760px) {
   header {
     position: fixed;
-    width: 91%;
+    width: 92%;
     border-bottom: solid 1px #c6c1c1;
     background-color: white;
     z-index: 10;
+    min-width: 630px;
   }
   
   header .content {
@@ -121,29 +126,29 @@ header .mobile {
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
   }
-  
-  header .logo {
-    flex: 1;
-    margin-left: -2%;
+
+  header .content nav.desktop{
+    width: 100%;
+    padding: 0;
+    margin-left: 3rem;
   }
 
   header .content nav.desktop ul {
-    display: inline-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
   }
   
   header .content nav.desktop ul li {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-left: 0.5rem;
-    list-style: none;
+    padding: 0;
   }
    
   header .content nav.desktop ul li a {
     display: flex;
     align-items: center;
     width: max-content;
-    flex-direction: row;
     vertical-align: bottom;
     line-height: 1.6;
     font-size: 1rem;
@@ -155,16 +160,18 @@ header .mobile {
     padding-left: 0.5rem;
   }
   
-  .joinBtn{
-    border-radius: 5px;
-    height: 2rem;
-    background-color: #9dc20b;
+  #lastLi{
+    padding: 0;
   }
   
-  header .content nav.desktop ul li a.joinBtn{
+  #joinBtn{
+    display: flex;
     text-align: center;
     color: #f3f3f3;
     padding: 0.1rem 0.8rem 0.1rem 0.8rem;
+    border-radius: 5px;
+    height: 2rem;
+    background-color: #9dc20b;
   }
 }
 
@@ -173,54 +180,78 @@ header .mobile {
     display: none;
   }
   
+  header .mobile{
+    display: show;
+  }
+
   header {
+    padding: 0;
+    margin: 0;
     position: fixed;
     width: 100%;
     border-bottom: solid 1px #c6c1c1;
     background-color: white;
     z-index: 10;
     height: 3rem;
+    min-width: 0;
   }
 
   header .content {
+    width: 100%;
     display: flex;
     align-items: center;
-    border: solid rgb(0, 255, 55) ;
-  }
-
-  header .content .mobile {
-    background-color: #9dc20b;
-    border: solid red ;
-    width: 100%;
+    justify-content: center;
   }
 
   header .content nav.mobile{
     display: flex;
-    list-style: none;
-    background-color: #9dc20b;
-    justify-content: space-evenly;
+    width: 90%;
+  }
+
+  header .content nav.mobile ul{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
   }
 
-  header .content nav.mobile ul {
+  header .content nav.mobile ul li{
+    width: 100%;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
+  header .content nav.mobile ul li a{
+    width: max-content;
+    display: flex;
+    height: 1.4rem;
   }
-   
-  header .content nav.mobile ul li a {
-    color: aqua;
+
+  #joinBtn{
+    margin: 0 auto;
+    font-size: 1.5rem;
+    display: flex;
+    color: #f3f3f3;
+    padding: 0.1875rem 0.5rem 0.3rem 0.5rem;
+    border-radius: 4px;
+    height: 1.5rem;
+    background-color: #9dc20b;
   }
+
 }
 
 /* Sign Up Section */
 
 #sign-up-section {
   display: flex;
+  position: static;
   justify-content: flex-start;
   align-items: flex-start;
   height: 100%;
-  align-items: center;
-  background-image: url(https://raw.githubusercontent.com/marcelangelo/Fotomatic-Project/main/resources/images/banner-landingpage.jpg);
+  background-image: url(/resources/images/banner-landingpage.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -281,24 +312,44 @@ header .mobile {
 }
 
 @media only screen and (max-width: 760px) {
+  header{
+    display: show;
+  }
+
+  .main-content {
+    position: relative;
+    top: 9.1rem; /* To offset for fixed header. */
+  }
+
   #sign-up-section {
-    top: 40px;
-    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: static;
     display: flex;
+    justify-content: center;
     align-items: center;
-    height: 28rem;
+    height: 25rem;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: right;
+  }
+
+  #sign-up-cta .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 
   #sign-up-cta {
-    position: static;
-    width: auto;
-    height: auto;
     background-color: transparent;
     border: none;
+    margin: 0;
   }
 
-  #sign-up-cta .content {
-    margin-top: 0;
+  #sign-up-cta .header{
+    margin: 0;
   }
 
   #sign-up-cta .email {
@@ -315,8 +366,44 @@ header .mobile {
 }
 
 @media only screen and (max-width: 450px) {
+  header{
+    display: show;
+  }
+
+  .main-content {
+    top: 3.1rem; /* To offset for fixed header. */
+  }
+
   #sign-up-section {
-    height: 20rem;
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 26rem;
+    background-image: url(/resources/images/banner-landingpage.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    width: 100.9%;
+  }
+
+  #sign-up-cta {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #sign-up-cta .header{
+    margin: 0;
+  }
+
+  #sign-up-cta .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: solid tomato;
   }
 
   #sign-up-cta h1 {
@@ -331,6 +418,7 @@ header .mobile {
 /* Features Section */
 
 #features-section {
+  position: relative;
   display: flex;
   padding-top: 4rem;
   padding-bottom: 2.875rem;
@@ -343,6 +431,7 @@ header .mobile {
 }
 
 .feature {
+  position: relative;
   background-color: white;
   width: 40%;
   height: 100%;
@@ -365,7 +454,7 @@ header .mobile {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  height: 7.1875rem;
+  height: 13rem;
   width: 100%;
 }
 
@@ -374,16 +463,18 @@ header .mobile {
   line-height: 1.2;
   color: #4a4a4a;
   font-weight: bold;
+  padding-bottom: 1rem;
 }
 
 .feature .center .content h3{
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.2;
   color: #4a4a4a;
   width: 75%;
 }
 
 .feature .image-container{
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -392,11 +483,9 @@ header .mobile {
 
 .feature .image-container img{
   width: 100%;
-  height: 100%;
 }
 
 .feature h2 {
-  padding-bottom: .5rem;
   font-size: 2.25rem;
   font-weight: bold;
   color: #4a4a4a;
@@ -431,7 +520,6 @@ header .mobile {
     gap: 0.05rem;
     width: 100%;
     justify-content: space-evenly;
-    align-items: center;
     height: 100%;
   }
   
@@ -446,8 +534,8 @@ header .mobile {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 19.5rem;
-    height: 19.5rem;
+    width: 100%;
+    height: 100%;
   }
 
   .feature .center .content{
@@ -456,7 +544,7 @@ header .mobile {
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    height: 10rem;
+    height: 13rem;
     width: 100%;
   }
 
@@ -467,6 +555,7 @@ header .mobile {
     line-height: 1.2;
     color: #4a4a4a;
     font-weight: bold;
+    padding: 0;
   }
   
   .feature .center .content h3{
@@ -475,6 +564,60 @@ header .mobile {
     color: #4a4a4a;
     width: 95%;
     text-align: left;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #features-section{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 100.8%;
+  }
+
+  .feature {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+  }
+
+  .feature .center .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    margin: 0;
+  }
+
+  .feature .center .content h2{
+    font-size: 1.125rem;
+    width: 95%;
+    text-align: center;
+    line-height: 1.3;
+    color: #4a4a4a;
+    font-weight: bold;
+  }
+  
+  .feature .center .content h3{
+    font-size: 1.1rem;
+    line-height: 1.4;
+    color: #4a4a4a;
+    width: 75%;
+    text-align: center;
+    padding-top: 0.5rem;
+  }
+
+  #feature-1 .center{
+    background-color: #9b9b9b;
+  }
+
+  #feature-2 .center{
+    background-color: #ffffff;
   }
 }
 
@@ -506,12 +649,21 @@ header .mobile {
   max-width: 100%;
   padding: 0 1%;
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 0.5rem;
+}
 
+#filters-section .images-container img {
+  width: 100%;
 }
 
 @media only screen and (max-width: 760px) {
   #filters-section {
     padding: 1.5rem 0 0 0;
+    margin-top: 2rem;
+    width: 100%;
+    margin-left: -8px;
   }
 
   #filters-section .content {
@@ -533,12 +685,60 @@ header .mobile {
   }
 
   #filters-section .images-container{
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
   }
 
   #filters-section .images-container img {
-    width: 15rem;
+    width: 12rem;
+  }
+
+  #filters-section .extra {
+    display: show;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #filters-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100.9%;
+    padding-top: 1.5rem;
+    margin: 0;
+  }
+
+  #filters-section .content {
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 80%;
+  }
+
+  #filters-section .content h2 {
+    padding-bottom: .625rem;
+    font-size: 1.125rem;
+    line-height: 1.3;
+    font-weight: bold;
+  }
+
+  #filters-section .content h3 {
+    font-size: 1.125rem;
+    line-height: 1.4;
+    color: #c4c4c4;
+    font-weight: 400;
+  }
+
+  #filters-section .images-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0;
+  }
+
+  #filters-section .images-container img {
+    width: 10rem;
   }
 
   #filters-section .extra {
@@ -570,7 +770,6 @@ header .mobile {
 @media only screen and (max-width: 760px) {
   #quotes-section{
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 1rem;
   }
@@ -578,12 +777,17 @@ header .mobile {
   #quotes-section .content{
     width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
   }
 
-  #quotes-section .quote {
-    text-align: left;
+  #quotes-section .content span.quote {
+    text-align: center;
     font-size: 1.5rem;
     line-height: 1.4;
+    width: 90%;
+    padding: 0;
   }
 
   #quotes-section .quote-citation {
@@ -592,11 +796,46 @@ header .mobile {
   }
 }
 
+@media only screen and (max-width: 450px) {
+  #quotes-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 87%;
+    padding: 2rem;
+  }
+
+  #quotes-section .content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+  }
+
+  #quotes-section .content .quote {
+    padding: 0;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+
+  #quotes-section .quote-citation {
+    display: block;
+    height: 100%;
+    padding: 0;
+  }
+}
+
 /* Footer */
 
 footer {
   background-color: #9b9b9b;
   height: 3.875rem;
+  width: 100.9%;
 }
 
 footer .content{
