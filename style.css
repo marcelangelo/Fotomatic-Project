@@ -381,9 +381,6 @@ header .mobile {
     justify-content: center;
     align-items: center;
     height: 26rem;
-    background-image: url(/resources/images/banner-landingpage.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
     background-position-x: right;
     width: 100%;
     padding: 0;
