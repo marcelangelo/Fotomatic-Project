@@ -13,8 +13,9 @@ html {
 }
 
 .main-content {
-  position: relative;
   top: 9.1rem; /* To offset for fixed header. */
+  margin: 0;
+  padding: 0;
 }
 
 .center {
@@ -39,16 +40,18 @@ html {
 /* Header */
 
 header {
+  right: 0;
+  left: 0;
+  margin: 0;
+  top: 0;
   position: fixed;
   display: flex;
   align-items: center;
-  justify-content: center;
   width: 100%;
   border-bottom: solid 1px #c6c1c1;
   background-color: white;
   z-index: 10;
   height: 5.3125rem;
-  padding: 1.875rem;
 }
 
 header .content {
@@ -57,6 +60,7 @@ header .content {
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  padding: 1.875rem 1.875rem 1.875rem 1.875rem;
 }
 
 header .content .logo {
@@ -103,21 +107,23 @@ header .mobile {
 
 
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 740px) {
   header {
     position: fixed;
-    width: 92%;
     border-bottom: solid 1px #c6c1c1;
     background-color: white;
-    z-index: 10;
-    min-width: 630px;
+    height: 9rem;
+    width: 99%;
   }
   
   header .content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    height: 1.5rem;
+    gap: 3rem;
+    width: 100%;
+    height: 3rem;
+    padding: 0rem 2rem;
   }
   
   header .content a{
@@ -130,29 +136,27 @@ header .mobile {
   header .content nav.desktop{
     width: 100%;
     padding: 0;
-    margin-left: 3rem;
   }
 
   header .content nav.desktop ul {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+    padding: 0;
   }
   
   header .content nav.desktop ul li {
-    display: flex;
     padding: 0;
   }
    
   header .content nav.desktop ul li a {
     display: flex;
     align-items: center;
-    width: max-content;
-    vertical-align: bottom;
     line-height: 1.6;
     font-size: 1rem;
     color: #4a4a4a;
+    padding: 0;
   }
   
   header .icon {
@@ -185,27 +189,25 @@ header .mobile {
   }
 
   header {
-    padding: 0;
-    margin: 0;
     position: fixed;
-    width: 99%;
+    max-width: 450px;
+    width: 100%;
     border-bottom: solid 1px #c6c1c1;
     background-color: white;
-    z-index: 10;
     height: 3rem;
-    min-width: 0;
+    padding: 0;
   }
 
   header .content {
-    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 
   header .content nav.mobile{
     display: flex;
-    width: 90%;
+    width: 100%;
   }
 
   header .content nav.mobile ul{
@@ -254,7 +256,6 @@ header .mobile {
   background-image: url(/resources/images/banner-landingpage.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100%;
 }
 
 #sign-up-cta {
@@ -322,14 +323,14 @@ header .mobile {
   }
 
   #sign-up-section {
+    width: 100%;
     padding: 0;
     margin: 0;
-    position: static;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 25rem;
-    width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: right;
@@ -384,7 +385,9 @@ header .mobile {
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: right;
-    width: 100.9%;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
   }
 
   #sign-up-cta {
@@ -424,7 +427,6 @@ header .mobile {
   padding-bottom: 2.875rem;
   background: linear-gradient(45deg, rgb(95, 95, 95), rgba(255, 255, 255, 0.63));
   gap: 2.375rem;
-  width: 100%;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -518,9 +520,9 @@ header .mobile {
     padding-bottom: 2rem;
     background-color: #9b9b9b;
     gap: 0.05rem;
-    width: 100%;
     justify-content: space-evenly;
     height: 100%;
+    width: 100%;
   }
   
   .feature {
@@ -573,7 +575,7 @@ header .mobile {
     flex-direction: column;
     margin: 0;
     padding: 0;
-    width: 100.8%;
+    width: 100%;
   }
 
   .feature {
@@ -625,6 +627,10 @@ header .mobile {
 
 #filters-section {
   padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #filters-section .content {
@@ -663,7 +669,6 @@ header .mobile {
     padding: 1.5rem 0 0 0;
     margin-top: 2rem;
     width: 100%;
-    margin-left: -8px;
   }
 
   #filters-section .content {
@@ -705,9 +710,9 @@ header .mobile {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100.9%;
+    width: 100%;
     padding-top: 1.5rem;
-    margin: 0;
+    margin: 0 auto;
   }
 
   #filters-section .content {
@@ -752,7 +757,9 @@ header .mobile {
   background-color: #f3f3f3;
   height: 100%;
   padding: 5rem 1.875rem 5rem 1.875rem;
-  width: 86.6%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #quotes-section .content .quote {
@@ -770,17 +777,17 @@ header .mobile {
 
 @media only screen and (max-width: 760px) {
   #quotes-section{
+    padding: 0;
+    margin: 0;
     display: flex;
-    align-items: center;
-    height: 1rem;
+    height: 8rem;
+    width: 100%;
   }
 
   #quotes-section .content{
-    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 0;
+    padding: 2rem;
   }
 
   #quotes-section .content span.quote {
@@ -804,7 +811,6 @@ header .mobile {
     justify-content: center;
     align-items: center;
     height: 100%;
-    padding: 2rem;
   }
 
   #quotes-section .content{
@@ -813,7 +819,7 @@ header .mobile {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    padding: 0;
+    padding: 2rem;
   }
 
   #quotes-section .content .quote {
@@ -836,7 +842,7 @@ header .mobile {
 footer {
   background-color: #9b9b9b;
   height: 3.875rem;
-  width: 100.9%;
+  width: 100%;
 }
 
 footer .content{
